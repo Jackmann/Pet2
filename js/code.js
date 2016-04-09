@@ -13,8 +13,12 @@ function initMap() {
         lng: position.coords.longitude
       };
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
+      //infoWindow.setPosition(pos);
+      //infoWindow.setContent('Location found.');
+      var marker = new google.maps.Marker({
+      	position: pos,
+      	map: map
+      });
       map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
